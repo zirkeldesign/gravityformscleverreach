@@ -1028,10 +1028,10 @@ class GFCleverReach extends GFFeedAddOn {
 				$add_contact = $this->api->receiverAdd( $this->api_key, $feed['meta']['group'], $contact );
 
 				// If contact could not be added, exit.
-				if ( $update_contact->statuscode != 0 ) {
+				if ( $add_contact->statuscode != 0 ) {
 
 					// Log that we could not create contact.
-					$this->add_feed_error( "{$contact['email']} has not been created; {$update_contact->message}", $feed, $entry, $form );
+					$this->add_feed_error( "{$contact['email']} has not been created; {$add_contact->message}", $feed, $entry, $form );
 
 					return;
 
